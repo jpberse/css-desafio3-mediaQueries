@@ -27,7 +27,7 @@
 }
 
 .logo-container h1 {
-    font-size: 20px;
+    font-size: 1.5em;
     font-weight: 200;
     padding-left: 0.5em;
 }
@@ -36,6 +36,10 @@
     filter: invert(1);
     width: 2em;
     height: auto;
+}
+
+.category-items {
+    display: none;
 }
 
 .filter-container {
@@ -54,7 +58,7 @@
 }
 
 .filter-container select {
-    width: 80%;
+    width: 90%;
     height: 50%;
     padding: 0 0.5em;
     border-radius: 0.5em;
@@ -66,9 +70,15 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    height: 100%;
+}
+
+.card-product-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     gap: 1em;
-    margin: 1em 0;
-    overflow-y: scroll;
+    padding: 1em 0;
 }
 
 .card-product {
@@ -106,7 +116,7 @@
 }
 
 .button-page {
-    margin-top: 0.5em;
+    padding: 0.5em 0;
 }
 
 .button-page button {
@@ -139,6 +149,7 @@
     color: azure;
     font-size: 20px;
     font-weight: 200;
+    text-align: center;
 }
 
 .grid-container {
@@ -151,4 +162,57 @@
     grid-template-rows: 1fr 1fr 45fr 1fr;
     min-height: 100vh;
     width: 100%;
+}
+
+@media (min-width: 576px) {
+    .grid-container {
+        grid-template-areas: 
+            "navbar filter"
+            "navbar main"
+            "footer main";
+            grid-template-columns: 1fr 6fr;
+            grid-template-rows: 1fr 14fr 2fr;
+    }
+
+    .navbar-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+
+    .logo-container {
+        margin: 1em 0;
+    }
+
+    .logo-container h1 {
+        font-size: 1em;
+    }
+
+    .burger-menu {
+        display: none;
+    }
+
+    .category-items {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1em;
+    } 
+
+    .card-product-container {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        align-content: center;
+        justify-items: center;
+        padding: 1em;
+    }
+
+    .footer-container {
+        justify-content: space-evenly;
+    }
+
+    .footer-container img {
+        width: 2em;
+        height: auto;
+    }
 }
